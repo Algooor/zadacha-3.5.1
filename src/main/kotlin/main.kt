@@ -77,8 +77,4 @@ fun main() {
     println(result.add(threePost))
     println(result.update(secondPost))
 
-//    println(WallService.add(firstPost))
-//    println(WallService.add(secondPost))
-//    println(WallService.add(threePost))
-//    println(WallService.update(firstPost))
 }
