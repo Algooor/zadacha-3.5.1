@@ -1,5 +1,6 @@
 package ru.netology
 
+
 fun main() {
     val firstPost = Post(
         id = 0,
@@ -22,7 +23,11 @@ fun main() {
         canEdit = false, isPinned = true,
         markedAsAds = false,
         isFavorite = false,
-        postponedId = 0
+        postponedId = 0,
+        geo = Post.Geo("", "", null),
+        copyHistory = null,
+        postSource = Post.PostSource(Type.Vk, Platform.Android, ""),
+        attachment = null
     )
     val secondPost = Post(
         id = 2,
@@ -45,7 +50,11 @@ fun main() {
         canEdit = false, isPinned = true,
         markedAsAds = false,
         isFavorite = true,
-        postponedId = 0
+        postponedId = 0,
+        geo = Post.Geo("", "", null),
+        copyHistory = null,
+        postSource = Post.PostSource(Type.Vk, Platform.Android, ""),
+        attachment = null
     )
     val threePost = Post(
         id = 0,
@@ -68,7 +77,11 @@ fun main() {
         canEdit = false, isPinned = true,
         markedAsAds = false,
         isFavorite = false,
-        postponedId = 0
+        postponedId = 0,
+        geo = Post.Geo("", "", null),
+        copyHistory = null,
+        postSource = Post.PostSource(Type.Vk, Platform.Android, ""),
+        attachment = null
     )
 
     val result = WallService()

@@ -31,7 +31,11 @@ class WallServiceTest {
                 canEdit = false, isPinned = true,
                 markedAsAds = false,
                 isFavorite = false,
-                postponedId = 0
+                postponedId = 0,
+                geo = Post.Geo("", "", null),
+                copyHistory = null,
+                postSource = Post.PostSource(Type.Vk, Platform.Android, ""),
+                attachment = null
             )
         )
         // act
@@ -66,7 +70,11 @@ class WallServiceTest {
                 canEdit = false, isPinned = true,
                 markedAsAds = false,
                 isFavorite = false,
-                postponedId = 0
+                postponedId = 0,
+                geo = Post.Geo("", "", null),
+                copyHistory = null,
+                postSource = Post.PostSource(Type.Vk, Platform.Android, ""),
+                attachment = null
             )
         )
         val update = Post(
@@ -90,7 +98,11 @@ class WallServiceTest {
             canEdit = false, isPinned = true,
             markedAsAds = false,
             isFavorite = true,
-            postponedId = 0
+            postponedId = 0,
+            geo = Post.Geo("", "", null),
+            copyHistory = null,
+            postSource = Post.PostSource(Type.Vk, Platform.Android, ""),
+            attachment = null
         )
         // act
         val result = service.update(update)
@@ -124,7 +136,11 @@ class WallServiceTest {
                 canEdit = false, isPinned = true,
                 markedAsAds = false,
                 isFavorite = false,
-                postponedId = 0
+                postponedId = 0,
+                geo = Post.Geo("", "", null),
+                copyHistory = null,
+                postSource = Post.PostSource(Type.Vk, Platform.Android, ""),
+                attachment = null
             )
         )
         val update = Post(
@@ -148,7 +164,11 @@ class WallServiceTest {
             canEdit = false, isPinned = true,
             markedAsAds = false,
             isFavorite = true,
-            postponedId = 0
+            postponedId = 0,
+            geo = Post.Geo("", "", null),
+            copyHistory = null,
+            postSource = Post.PostSource(Type.Vk, Platform.Android, ""),
+            attachment = null
         )
         // act
         val result = service.update(update)
