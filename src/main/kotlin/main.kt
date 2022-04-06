@@ -84,10 +84,22 @@ fun main() {
         attachment = null
     )
 
+    val firstComment = Comment (
+        ownerId = 0,
+        postId = 2,
+        fromGroup = 0,
+        message = "",
+        replayToComments = 0,
+        attachments = null,
+        stickerId = 0,
+        guid = 0
+    )
+
     val result = WallService()
     println(result.add(firstPost))
     println(result.add(secondPost))
     println(result.add(threePost))
     println(result.update(secondPost))
+    println(result.createComment(firstComment))
 
 }
