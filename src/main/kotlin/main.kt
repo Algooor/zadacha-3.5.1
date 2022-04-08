@@ -30,7 +30,7 @@ fun main() {
         attachment = null
     )
     val secondPost = Post(
-        id = 2,
+        id = 3,
         ownerId = 1,
         fromId = 1,
         createdBy = 1,
@@ -84,10 +84,22 @@ fun main() {
         attachment = null
     )
 
+    val firstComment = Comment (
+        ownerId = 0,
+        postId = 3,
+        fromGroup = 0,
+        message = "",
+        replayToComments = 0,
+        attachments = null,
+        stickerId = 0,
+        guid = 0
+    )
+
     val result = WallService()
     println(result.add(firstPost))
     println(result.add(secondPost))
     println(result.add(threePost))
     println(result.update(secondPost))
+    println(result.createComment(firstComment))
 
 }

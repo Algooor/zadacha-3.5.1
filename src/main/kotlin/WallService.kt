@@ -1,39 +1,35 @@
 package ru.netology
 
+class PostNotFoundException(message: String) : RuntimeException(message)
+
 class WallService {
 
     private var posts = emptyArray<Post>()
+    private var comments = emptyArray<Comment>()
     fun add(post: Post): Post {
-        val post = post.copy(id = propertyId())
-        posts += post
+        val newPost = post.copy(id = propertyId())
+        posts += newPost
         return posts.last()
     }
 
-    fun update(post: Post): Boolean {
-        val postId = post.component1()
-        for ((index, post) in posts.withIndex())
+    fun createComment(comment: Comment): Comment {
+        val postId = comment.postId
+        for (post in posts) {
             if (post.id == postId) {
+                comments += comment
+                return comments.last()
+            }
+        }
+        throw PostNotFoundException("нет поста с id = $postId")
+    }
+
+    fun update(post: Post): Boolean {
+        val postId = post.id
+        for ((index, updatePost) in posts.withIndex())
+            if (updatePost.id == postId) {
                 posts[index] = post.copy(
-                    fromId = post.fromId,
-                    createdBy = post.createdBy,
-                    text = post.text,
-                    replyOwnerId = post.replyOwnerId,
-                    replyPostId = post.replyPostId,
-                    friendsOnly = post.friendsOnly,
-                    comments = post.comments,
-                    copyright = post.copyright,
-                    likes = post.likes,
-                    reposts = post.reposts,
-                    views = post.views,
-                    postType = post.postType,
-                    singerId = post.singerId,
-                    canPin = post.canPin,
-                    canDelete = post.canDelete,
-                    canEdit = post.canEdit,
-                    isPinned = post.isPinned,
-                    markedAsAds = post.markedAsAds,
-                    isFavorite = post.isFavorite,
-                    postponedId = post.postponedId
+                    ownerId = updatePost.ownerId,
+                    data = updatePost.data
                 )
                 return true
             }
