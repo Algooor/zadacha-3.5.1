@@ -1,13 +1,15 @@
 package ru.netology.Attachment
 
-class GraffitiAttachments(
-    val id: Int,
-    val ownerId: Int,
-    val url: String,
-    val width: Int,
-    val height: Int
-
+data class GraffitiAttachments(
+    override val type: String = "graffiti",
+    val graffiti: Graffiti = Graffiti(0, 0, "", 0, 0)
 ) : Attachment {
-    override val type: String
-        get() = "Graffiti"
+
+    data class Graffiti(
+        val id: Int,
+        val ownerId: Int,
+        val url: String,
+        val width: Int,
+        val height: Int
+    )
 }

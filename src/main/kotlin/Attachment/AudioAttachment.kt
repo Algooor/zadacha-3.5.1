@@ -1,17 +1,20 @@
 package ru.netology.Attachment
 
-class AudioAttachment(
-    val id: Int,
-    val ownerId: Int,
-    val artist: String,
-    val title: String,
-    val duration: Int,
-    val url: String,
-    val date: Int
-
+data class AudioAttachment(
+    override val type: String = "audio",
+    val audio: Audio = Audio(0, 0, "", "", 0, "", 0)
 ) : Attachment {
-    override val type: String
-        get() = "Audio"
 
-
+    data class Audio(
+        val id: Int,
+        val ownerId: Int,
+        val artist: String,
+        val title: String,
+        val duration: Int,
+        val url: String,
+        val date: Int
+    )
 }
+
+
+

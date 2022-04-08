@@ -30,7 +30,7 @@ fun main() {
         attachment = null
     )
     val secondPost = Post(
-        id = 2,
+        id = 3,
         ownerId = 1,
         fromId = 1,
         createdBy = 1,
@@ -86,7 +86,7 @@ fun main() {
 
     val firstComment = Comment (
         ownerId = 0,
-        postId = 2,
+        postId = 3,
         fromGroup = 0,
         message = "",
         replayToComments = 0,
